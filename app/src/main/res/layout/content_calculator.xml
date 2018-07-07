@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".CalculatorActivity"
+    tools:showIn="@layout/activity_calculator">
+
+    <TextView
+        android:layout_margin="16dp"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_description"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="#FFFFFF"/>
+
+    <TextView
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:text="Completa los siguientes datos y calcula tu IMC:"/>
+
+    <fragment
+        android:id="@+id/RgFragment"
+        android:name="cl.vero.imccalculator.RadioGroupFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <fragment
+        android:id="@+id/DataUserFragment"
+        android:name="cl.vero.imccalculator.DataUserFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/CalculatorBtn"
+        android:padding="16dp"
+        android:text="¡CONOCE TU IMC!"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/colorAccent"/>
+
+</LinearLayout>

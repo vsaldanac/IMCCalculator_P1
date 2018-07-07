@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">IMC Calculator</string>
+    <string name="action_settings">Settings</string>
+    <string name="app_description">El índice de masa corporal (IMC) es uno de los indicadores para evaluar el estado nutricional de una persona. </string>
+    <string name="app_oms">La Organización Mundial de la Salud ha propuesto una clasificación del estado nutricional dependiendo del IMC de una persona. El IMC es independiente de la edad y sexo, sin embargo, puede no corresponder al mismo grado de gordura en diferentes poblaciones debido, en parte, a diferentes proporciones corporales.</string>
+    <string name="app_more_information">INFORMATION</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_result">ResultActivity</string>
+    <string name="tab_text_1">Tu IMC</string>
+    <string name="tab_text_2">Más información </string>
+    <string name="section_format">Hello World</string>
+</resources>
