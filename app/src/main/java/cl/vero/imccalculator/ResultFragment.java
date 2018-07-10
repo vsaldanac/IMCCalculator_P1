@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -39,16 +40,11 @@ public class ResultFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         RadioGroup sexRg = view.findViewById(R.id.sexRg);
-        //EditText userName = view.findViewById(R.id.userNameEt);
-        //EditText userWeight = view.findViewById(R.id.weightUserEt);
-        //EditText userHeight = view.findViewById(R.id.heightUserEt);
+        EditText userName = view.findViewById(R.id.userNameEt);
+        EditText userWeight = view.findViewById(R.id.weightUserEt);
+        EditText userHeight = view.findViewById(R.id.heightUserEt);
 
-
-        //int weight = Integer.parseInt(userWeight.getText().toString());
-        //int height = Integer.parseInt(userHeight.getText().toString())/100;
-        //int imcResult = weight/(height*height);
-
-
+        new UserResults(sexRg.getCheckedRadioButtonId(), userName.getText().toString(), Integer.parseInt(String.valueOf(userWeight)), Integer.parseInt(String.valueOf(userHeight))).result();
 
     }
 
