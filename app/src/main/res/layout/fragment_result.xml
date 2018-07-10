@@ -15,8 +15,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-
-
+    <Button
+        android:id="@+id/imcBtn"
+        android:padding="16dp"
+        android:text="¡Presiona para conocer tu IMC!"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/colorAccent"/>
 
 
 </LinearLayout>

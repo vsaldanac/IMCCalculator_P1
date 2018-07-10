@@ -35,7 +35,19 @@ public class RadioGroupFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        RadioGroup sexRg = view.findViewById(R.id.sexRg);
+
+        sexRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+
+
             }
+        });
+
+
+    }
 
 }
 

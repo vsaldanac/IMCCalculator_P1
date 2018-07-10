@@ -41,7 +41,7 @@
     <Button
         android:id="@+id/CalculatorBtn"
         android:padding="16dp"
-        android:text="¡CONOCE TU IMC!"
+        android:text="¡Presiona para continuar!"
         android:textColor="#ffffff"
         android:textStyle="bold"
         android:layout_width="wrap_content"

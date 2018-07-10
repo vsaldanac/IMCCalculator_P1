@@ -1,19 +1,17 @@
 package cl.vero.imccalculator;
 
-
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -39,14 +37,30 @@ public class ResultFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        RadioGroup sexRg = view.findViewById(R.id.sexRg);
-        EditText userName = view.findViewById(R.id.userNameEt);
-        EditText userWeight = view.findViewById(R.id.weightUserEt);
-        EditText userHeight = view.findViewById(R.id.heightUserEt);
+        Button button = view.findViewById(R.id.imcBtn);
+        final RadioGroup sexRg = view.findViewById(R.id.sexRg);
+        //final EditText userName = view.findViewById(R.id.userNameEt);
+        //final EditText userWeight = view.findViewById(R.id.weightUserEt);
+        //final EditText userHeight = view.findViewById(R.id.heightUserEt);
 
-        new UserResults(sexRg.getCheckedRadioButtonId(), userName.getText().toString(), Integer.parseInt(String.valueOf(userWeight)), Integer.parseInt(String.valueOf(userHeight))).result();
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                /*int id = sexRg.getCheckedRadioButtonId();
+                String name = userName.getText().toString();
+                int height = Integer.parseInt(String.valueOf(userHeight));
+                int weight = Integer.parseInt(String.valueOf(userWeight));
+
+                new UserResults(id,name,height,weight).imc();*/
+
+                Log.d("TAG", String.valueOf(sexRg.getCheckedRadioButtonId()));
+
+            }
+
+        });
+
+        //new UserResults(1,"Vero",77,150).imc();
+        //new UserResults(id, userName.getText().toString(), Integer.parseInt(String.valueOf(userWeight)), Integer.parseInt(String.valueOf(userHeight))).result();
     }
-
-
 }
