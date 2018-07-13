@@ -32,7 +32,20 @@ public class CalculatorActivity extends AppCompatActivity {
                 if (userName.length()==0 || userWeight.length()==0 || userHeight.length()==0 || sexRg.getCheckedRadioButtonId()==-1){
                     Toast.makeText(CalculatorActivity.this, "Complete todos los datos solicitados", Toast.LENGTH_SHORT).show();
                 }else{
-                    Intent intent = new Intent(CalculatorActivity.this,ResultActivity.class);
+
+                    Intent intent = new Intent(CalculatorActivity.this, ResultActivity.class);
+                    RadioGroup sexRg = findViewById(R.id.sexRg);
+                    EditText userName = findViewById(R.id.userNameEt);
+                    EditText userWeight = findViewById(R.id.weightUserEt);
+                    EditText userHeight = findViewById(R.id.heightUserEt);
+                    String sex = String.valueOf(sexRg.getCheckedRadioButtonId());
+                    String name = userName.getText().toString();
+                    int height = Integer.parseInt(userHeight.getText().toString());
+                    int weight = Integer.parseInt(userWeight.getText().toString());
+                    intent.putExtra("keySex", sex);
+                    intent.putExtra("keyName",name);
+                    intent.putExtra("keyHeight",height);
+                    intent.putExtra("keyWeight",weight);
                     startActivity(intent);
 
                 }

@@ -1,35 +1,57 @@
 package cl.vero.imccalculator;
 
-import android.support.design.widget.TabLayout;
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-
-import android.support.v4.view.ViewPager;
-import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
-
-    private SectionsPagerAdapter mSectionsPagerAdapter;
-
-    private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
+                Snackbar.make(view, "Más información en http://apps.who.int/bmi", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+            }
+        });
 
-        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+        Bundle extras = getIntent().getExtras();
+        String sex = extras.getString("keySex");
+        TextView sexTv = findViewById(R.id.sexTv);
+        //sexTv.setText(sex);
+
+        if (sex.contains("1")){
+            sexTv.setText("Estimada ");
+        } else {
+            sexTv.setText("Estimado ");
+        }
+
+        String name = extras.getString("keyName");
+        TextView nameTv = findViewById(R.id.nameTv);
+        nameTv.setText(name);
+
+        int height = extras.getInt("keyHeight");
+        int weight = extras.getInt("keyWeight");
+        double heightMetres = height*0.01;
+        double den = heightMetres*heightMetres;
+        double imcResult = weight/den;
+
+        TextView imcTv = findViewById(R.id.imcTv);
+        imcTv.setText("Tu IMC es, aproximadamente, igual a "+String.format("%.2f", imcResult));
 
     }
+
 }
